@@ -17,3 +17,12 @@ docker-compose run node sh
 npx tsc
 # output => ls ./dist
 ```
+
+## TS実行
+```
+npx ts-node src/index.ts
+
+or
+
+npx ts-node-dev --respawn src/index.ts
+```
