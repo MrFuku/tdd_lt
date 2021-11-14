@@ -26,3 +26,9 @@ or
 
 npx ts-node-dev --respawn src/index.ts
 ```
+
+## Jest実行
+https://typescript-jp.gitbook.io/deep-dive/intro-1/jest
+```
+npx jest
+```
