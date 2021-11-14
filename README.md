@@ -5,10 +5,6 @@ docker-compose build
 
 ## 起動
 ```
-docker-compose up
-
-or
-
 docker-compose run node sh
 ```
 

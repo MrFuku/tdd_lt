@@ -5,6 +5,5 @@ services:
     container_name: node
     tty: true
     working_dir: /usr/src
-    command: /bin/sh
     volumes:
       - .:/usr/src
