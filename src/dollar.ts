@@ -8,6 +8,6 @@ export class Dollar {
   }
 
   equals(dollar: Dollar) {
-    return true
+    return this.amount === dollar.amount
   }
 }
