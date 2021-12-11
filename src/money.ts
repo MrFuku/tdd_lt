@@ -2,7 +2,7 @@
 // import { Franc } from "./franc";
 
 export abstract class Money {
-  constructor(protected readonly amount: number) {
+  constructor(protected readonly amount: number, public readonly currency: string) {
   }
 
   static dollar(amount: number):Dollar {
@@ -26,7 +26,7 @@ export abstract class Money {
 
 export class Dollar extends Money {
   constructor(amount: number) {
-    super(amount);
+    super(amount, 'USD');
   }
 
   times(multiplier: number): Money {
@@ -36,7 +36,7 @@ export class Dollar extends Money {
 
 export class Franc extends Money {
   constructor(amount: number) {
-    super(amount);
+    super(amount, 'CHF');
   }
 
   times(multiplier: number): Money {

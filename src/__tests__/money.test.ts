@@ -18,6 +18,8 @@ test('null equals', () => {
 });
 
 test('equals Franc = Dollar', () => {
-  expect(new Franc(5).equals(new Dollar(5))).toBeTruthy();
-  expect(new Franc(5).equals(new Dollar(6))).toBeFalsy();
+
+test('currency', () => {
+  expect(Money.dollar(1).currency).toBe('USD');
+  expect(Money.franc(1).currency).toBe('CHF');
 });
