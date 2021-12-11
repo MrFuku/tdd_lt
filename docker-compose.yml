@@ -1,9 +1,26 @@
-version: '3'
+version: '3.8'
 services:
   node:
-    build: .
+    build:
+      context: .
+      dockerfile: ./.dockerdev/Dockerfile
+      args:
+        NODE_VERSION: '16-alpine3.14'
     container_name: node
+    stdin_open: true
     tty: true
-    working_dir: /usr/src
+    environment:
+      HISTFILE: .dockerdev/.ash_history
     volumes:
-      - .:/usr/src
+      - .dockerdev/.profile:/root/.profile:ro
+      - .dockerdev/.ashrc:/root/.ashrc
+      - yarn:/usr/src/.yarn
+      - node_modules:/usr/src/node_modules
+      - .:/usr/src:cached
+    command: >
+      ash -c "source /root/.profile &&
+      /bin/ash"
+
+volumes:
+  yarn:
+  node_modules:

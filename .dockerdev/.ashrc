@@ -1,0 +1,3 @@
+alias ll='exa -lh --icons'
+alias la='exa -lha --icons'
+alias cat='bat'
