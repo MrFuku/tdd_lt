@@ -3,5 +3,5 @@
 - [ ] amount を private にする
 - [x] Dollar の副作用どうする？
 - [ ] Money の丸め処理どうする？
-- [ ] nullとの等価性比較
+- [x] nullとの等価性比較
 - [x] equals()メソッドの実装
