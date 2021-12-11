@@ -12,3 +12,4 @@
 - [x] equalsの一般化
 - [ ] timesの一般化
 - [x] FrancとDollarの比較
+- [ ] 通貨の概念
