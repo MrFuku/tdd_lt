@@ -10,6 +10,6 @@
 - [ ] 5CHF * 2 = 10CHF
 - [ ] Dollar と Franc の重複
 - [x] equalsの一般化
-- [ ] timesの一般化
+- [x] timesの一般化
 - [x] FrancとDollarの比較
 - [x] 通貨の概念
