@@ -35,14 +35,14 @@ test('times', () => {
   expect(five.times(3)).toEqual(Money.dollar(15));
 });
 
-test('simple addition', () => {
-  const sum  = Money.dollar(5).plus(Money.dollar(5));
+test('test reduce sum', () => {
+  const sum  = Money.dollar(3).plus(Money.dollar(4));
   const bank = new Bank();
   const reduced = bank.reduce(sum, 'USD');
-  expect(Money.dollar(10)).toEqual(reduced);
+  expect(Money.dollar(7)).toEqual(reduced);
 });
 
-test('testPlusReturnsSum', () => {
+test('test plus returns sum', () => {
   const five = Money.dollar(5);
   const result = five.plus(five)
   const sum = result as Sum

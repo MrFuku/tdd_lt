@@ -2,7 +2,7 @@ import { Expression } from "./expression";
 import { Sum } from "./sum";
 
 export class Money implements Expression {
-  constructor(protected readonly amount: number, public readonly currency: string) {
+  constructor(public readonly amount: number, public readonly currency: string) {
   }
 
   static dollar(amount: number):Money {
