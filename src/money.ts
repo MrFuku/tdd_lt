@@ -24,6 +24,10 @@ export class Money {
 
     return this.amount === money.amount
   }
+
+  toString() {
+    return `${this.amount} ${this.currency}`
+  }
 }
 
 export class Dollar extends Money {
