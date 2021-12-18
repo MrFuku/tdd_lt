@@ -2,6 +2,8 @@
 // import { Franc } from '../franc';
 import { Money } from '../money';
 import { Bank } from '../bank';
+import { Expression } from '../expression';
+import { Sum } from '../sum';
 
 test('equals', () => {
   expect(Money.dollar(5).equals(Money.dollar(5))).toBeTruthy();
@@ -35,9 +37,16 @@ test('times', () => {
 
 test('simple addition', () => {
   const sum  = Money.dollar(5).plus(Money.dollar(5));
-  expect(sum).toEqual(Money.dollar(10));
-
   const bank = new Bank();
   const reduced = bank.reduce(sum, 'USD');
   expect(Money.dollar(10)).toEqual(reduced);
 });
+
+test('testPlusReturnsSum', () => {
+  const five = Money.dollar(5);
+  const result = five.plus(five)
+  const sum = result as Sum
+  
+  expect(five).toEqual(sum.augend);
+  expect(five).toEqual(sum.addend);
+})
