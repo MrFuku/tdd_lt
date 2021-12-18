@@ -1,16 +1,13 @@
-// import { Dollar } from "./dollar";
-// import { Franc } from "./franc";
-
 export class Money {
   constructor(protected readonly amount: number, public readonly currency: string) {
   }
 
-  static dollar(amount: number):Dollar {
-    return new Dollar(amount, 'USD')
+  static dollar(amount: number):Money {
+    return new Money(amount, 'USD')
   }
 
-  static franc(amount: number):Franc {
-    return new Franc(amount, 'CHF')
+  static franc(amount: number):Money {
+    return new Money(amount, 'CHF')
   }
 
   times(multiplier: number): Money {
@@ -27,17 +24,5 @@ export class Money {
 
   toString() {
     return `${this.amount} ${this.currency}`
-  }
-}
-
-export class Dollar extends Money {
-  constructor(amount: number, currency: string) {
-    super(amount, currency);
-  }
-}
-
-export class Franc extends Money {
-  constructor(amount: number, currency: string) {
-    super(amount, currency);
   }
 }

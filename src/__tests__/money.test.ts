@@ -1,10 +1,8 @@
 // import { Dollar } from '../dollar';
 // import { Franc } from '../franc';
-import { Money, Dollar, Franc } from '../money';
+import { Money } from '../money';
 
 test('equals', () => {
-  expect(Money.franc(5).equals(Money.franc(5))).toBeTruthy();
-  expect(Money.franc(5).equals(Money.franc(6))).toBeFalsy();
   expect(Money.dollar(5).equals(Money.dollar(5))).toBeTruthy();
   expect(Money.dollar(5).equals(Money.dollar(6))).toBeFalsy();
 });
@@ -25,4 +23,11 @@ test('equals Franc = Dollar', () => {
 test('currency', () => {
   expect(Money.dollar(1).currency).toBe('USD');
   expect(Money.franc(1).currency).toBe('CHF');
+});
+
+test('times', () => {
+  const five: Money = Money.dollar(5);
+
+  expect(five.times(2)).toEqual(Money.dollar(10));
+  expect(five.times(3)).toEqual(Money.dollar(15));
 });
