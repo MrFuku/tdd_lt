@@ -25,4 +25,8 @@ export class Money {
   toString() {
     return `${this.amount} ${this.currency}`
   }
+
+  plus(addend: Money):Money {
+    return new Money(this.amount + addend.amount, this.currency)
+  }
 }

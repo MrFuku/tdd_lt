@@ -1,13 +1,15 @@
 - [ ] $5 + 10 CHF = $10(レートが 2:1 の場合)
-- [x] $5 * 2 = $10
-- [x] amount を private にする
-- [x] Dollar の副作用どうする？
+- [x] $5 + $5 = $10
 - [ ] Money の丸め処理どうする？
-- [x] nullとの等価性比較
-- [x] equals()メソッドの実装
 - [ ] hashCode()
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
+
+- [x] $5 * 2 = $10
+- [x] amount を private にする
+- [x] Dollar の副作用どうする？
+- [x] nullとの等価性比較
+- [x] equals()メソッドの実装
 - [x] Dollar と Franc の重複
 - [x] equalsの一般化
 - [x] timesの一般化
