@@ -1,4 +1,6 @@
-export class Money {
+import { Expression } from "./expression";
+
+export class Money implements Expression {
   constructor(protected readonly amount: number, public readonly currency: string) {
   }
 
@@ -26,7 +28,7 @@ export class Money {
     return `${this.amount} ${this.currency}`
   }
 
-  plus(addend: Money):Money {
+  plus(addend: Money):Expression {
     return new Money(this.amount + addend.amount, this.currency)
   }
 }
