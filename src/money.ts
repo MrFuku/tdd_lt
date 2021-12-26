@@ -2,8 +2,10 @@ import { Bank } from "./bank";
 import { Expression } from "./expression";
 import { Sum } from "./sum";
 
+export type Currency = 'CHF' | 'USD';
+
 export class Money implements Expression {
-  constructor(public readonly amount: number, public readonly currency: string) {
+  constructor(public readonly amount: number, public readonly currency: Currency) {
   }
 
   static dollar(amount: number):Money {
@@ -34,7 +36,7 @@ export class Money implements Expression {
     return new Sum(this, addend);
   }
 
-  reduce(bank: Bank,to: string): Money {
+  reduce(bank: Bank,to: Currency): Money {
     const rate = bank.rate(this.currency, to);
     return new Money(this.amount / rate, to);
   }
