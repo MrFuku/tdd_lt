@@ -1,15 +1,24 @@
 import { Expression } from './expression';
-import { Money } from './money';
+import { Currency, Money } from './money';
+import { Pair } from './pair';
 
 export class Bank {
+  private rates: { [key in string]: number } = {}
+
   reduce(source: Expression, to: string):Money {
     return source.reduce(this, to);
   }
 
-  addRate(from: string, to: string, rate: number) {
+  addRate(from: Currency, to: Currency, rate: number) {
+    const pair = new Pair(from, to);
+    this.rates[pair.key] = rate;
   }
 
-  rate(from: string, to: string): number {
-    return from === 'CHF' && to === 'USD' ? 2 : 1
+  rate(from: Currency, to: Currency): number {
+    if (from === to)
+      return 1;
+
+    const pair = new Pair(from, to);
+    return this.rates[pair.key]
   }
 }

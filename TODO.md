@@ -1,12 +1,11 @@
 - [ ] $5 + 10 CHF = $10(レートが 2:1 の場合)
 - [x] $5 + $5 = $10
 - [ ] Money の丸め処理どうする？
-- [ ] hashCode()
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
 - [x] Bank.reduce(Money)
-- [ ] Money を変換して換算を行う
-- [ ] Reduce(Bank,String)
+- [x] Money を変換して換算を行う
+- [x] Reduce(Bank,String)
 
 - [x] $5 * 2 = $10
 - [x] amount を private にする

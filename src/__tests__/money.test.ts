@@ -57,6 +57,13 @@ test('test reduce money', () => {
   expect(Money.dollar(1)).toEqual(result);
 })
 
+test('test identity rate', () => {
+  const bank = new Bank();
+  const rate = bank.rate('USD', 'USD');
+
+  expect(1).toEqual(rate);
+})
+
 test('test reduce money different currency', () => {
   const bank = new Bank();
   bank.addRate('CHF', 'USD', 2);
