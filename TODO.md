@@ -1,12 +1,15 @@
-- [ ] $5 + 10 CHF = $10(レートが 2:1 の場合)
-- [x] $5 + $5 = $10
+- [ ] $5 + $5がMoneyを返す
 - [ ] Money の丸め処理どうする？
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
+- [ ] Sum.plus
+- [ ] Expression.times
+
+- [x] $5 + 10 CHF = $10(レートが 2:1 の場合)
+- [x] $5 + $5 = $10
 - [x] Bank.reduce(Money)
 - [x] Money を変換して換算を行う
 - [x] Reduce(Bank,String)
-
 - [x] $5 * 2 = $10
 - [x] amount を private にする
 - [x] Dollar の副作用どうする？

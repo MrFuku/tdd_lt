@@ -3,7 +3,10 @@ import { Expression } from "./expression";
 import { Currency, Money } from "./money";
 
 export class Sum implements Expression {
-  constructor(public augend: Money, public addend: Money) {
+  constructor(public augend: Expression, public addend: Expression) {
+  }
+  plus(addend: Expression): Expression {
+    return addend;
   }
 
   reduce(bank: Bank, to: Currency):Money {
