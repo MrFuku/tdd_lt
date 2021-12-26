@@ -36,7 +36,7 @@ export class Money implements Expression {
     return new Sum(this, addend);
   }
 
-  reduce(bank: Bank,to: Currency): Money {
+  reduce(bank: Bank, to: Currency): Money {
     const rate = bank.rate(this.currency, to);
     return new Money(this.amount / rate, to);
   }

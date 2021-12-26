@@ -5,7 +5,7 @@ import { Pair } from './pair';
 export class Bank {
   private rates: { [key in string]: number } = {}
 
-  reduce(source: Expression, to: string):Money {
+  reduce(source: Expression, to: Currency):Money {
     return source.reduce(this, to);
   }
 
