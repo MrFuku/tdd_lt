@@ -4,6 +4,7 @@
 - [ ] hashCode()
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
+- [x] Bank.reduce(Money)
 
 - [x] $5 * 2 = $10
 - [x] amount を private にする
