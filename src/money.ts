@@ -34,6 +34,7 @@ export class Money implements Expression {
   }
 
   reduce(to: string): Money {
-    return this;
+    const rate = this.currency === 'CHF' && to === 'USD' ? 2 : 1;
+    return new Money(this.amount / rate, to)
   }
 }

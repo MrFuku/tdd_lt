@@ -5,6 +5,8 @@
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
 - [x] Bank.reduce(Money)
+- [ ] Money を変換して換算を行う
+- [ ] Reduce(Bank,String)
 
 - [x] $5 * 2 = $10
 - [x] amount を private にする
