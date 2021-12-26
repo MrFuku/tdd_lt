@@ -3,7 +3,7 @@
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
 - [x] Sum.plus
-- [ ] Expression.times
+- [x] Expression.times
 
 - [x] $5 + 10 CHF = $10(レートが 2:1 の場合)
 - [x] $5 + $5 = $10
