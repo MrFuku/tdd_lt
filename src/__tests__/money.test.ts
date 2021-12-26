@@ -79,3 +79,14 @@ test('test mixed addtion', () => {
   const result = bank.reduce(fiveBucks.plus(tenFrancs), 'USD');
   expect(result).toEqual(Money.dollar(10));
 })
+
+test('test sum plus money', () => {
+  const fiveBucks :Expression = Money.dollar(5);
+  const tenFrancs :Expression = Money.franc(10);
+  const bank = new Bank();
+  bank.addRate('CHF', 'USD', 2);
+
+  const sum :Expression = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+  const result = bank.reduce(sum, 'USD');
+  expect(result).toEqual(Money.dollar(15));
+})

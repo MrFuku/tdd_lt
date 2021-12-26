@@ -2,7 +2,7 @@
 - [ ] Money の丸め処理どうする？
 - [ ] 他のオブジェクトとの等価性比較
 - [ ] 5CHF * 2 = 10CHF
-- [ ] Sum.plus
+- [x] Sum.plus
 - [ ] Expression.times
 
 - [x] $5 + 10 CHF = $10(レートが 2:1 の場合)
