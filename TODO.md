@@ -1,7 +1,7 @@
 - [ ] $5 + $5がMoneyを返す
 - [ ] Money の丸め処理どうする？
 - [ ] 他のオブジェクトとの等価性比較
-- [ ] 5CHF * 2 = 10CHF
+- [x] 5CHF * 2 = 10CHF
 - [x] Sum.plus
 - [x] Expression.times
 

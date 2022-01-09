@@ -29,10 +29,13 @@ test('currency', () => {
 });
 
 test('times', () => {
-  const five: Money = Money.dollar(5);
+  const fiveBucks: Money = Money.dollar(5);
+  const fiveFrancs: Money = Money.franc(5);
 
-  expect(five.times(2)).toEqual(Money.dollar(10));
-  expect(five.times(3)).toEqual(Money.dollar(15));
+  expect(fiveBucks.times(2)).toEqual(Money.dollar(10));
+  expect(fiveBucks.times(3)).toEqual(Money.dollar(15));
+  expect(fiveFrancs.times(2)).toEqual(Money.franc(10));
+  expect(fiveFrancs.times(3)).toEqual(Money.franc(15));
 });
 
 test('test reduce sum', () => {
