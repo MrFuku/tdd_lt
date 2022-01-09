@@ -1,5 +1,5 @@
 import { Bank } from "./bank";
-import { Expression } from "./expression";
+import { Expression, roundCalculate } from "./expression";
 import { Currency, Money } from "./money";
 
 export class Sum implements Expression {
@@ -15,9 +15,7 @@ export class Sum implements Expression {
   }
 
   reduce(bank: Bank, to: Currency):Money {
-    const amount :number =
-      this.augend.reduce(bank, to).amount
-      + this.addend.reduce(bank, to).amount
+    const amount :number = roundCalculate(this.augend.reduce(bank, to).amount, this.addend.reduce(bank, to).amount);
     return new Money(amount, to);
   }
 }

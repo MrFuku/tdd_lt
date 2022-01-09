@@ -50,7 +50,11 @@ test('test reduce sum', () => {
   const sum  = Money.dollar(3).plus(Money.dollar(4));
   const bank = new Bank();
   const reduced = bank.reduce(sum, 'USD');
-  expect(Money.dollar(7)).toEqual(reduced);
+  expect(reduced).toEqual(Money.dollar(7));
+
+  const sumDecimal = Money.dollar(0.7715).plus(Money.dollar(0.177));
+  const reducedDecimal = bank.reduce(sumDecimal, 'USD');
+  expect(reducedDecimal).toEqual(Money.dollar(0.9485));
 });
 
 test('test plus returns sum', () => {
@@ -111,8 +115,4 @@ test('test sum times', () => {
   const sum :Expression = new Sum(fiveBucks, tenFrancs).times(2);
   const result = bank.reduce(sum, 'USD');
   expect(result).toEqual(Money.dollar(20));
-})
-
-test('test round error', () => {
-  expect(roundCalculate(0.7715, 0.177)).toBe(0.9485);
 })
