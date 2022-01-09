@@ -2,7 +2,7 @@
 // import { Franc } from '../franc';
 import { Money } from '../money';
 import { Bank } from '../bank';
-import { Expression } from '../expression';
+import { Expression, roundCalculate } from '../expression';
 import { Sum } from '../sum';
 
 test('equals', () => {
@@ -111,4 +111,8 @@ test('test sum times', () => {
   const sum :Expression = new Sum(fiveBucks, tenFrancs).times(2);
   const result = bank.reduce(sum, 'USD');
   expect(result).toEqual(Money.dollar(20));
+})
+
+test('test round error', () => {
+  expect(roundCalculate(0.7715, 0.177)).toBe(0.9485);
 })
