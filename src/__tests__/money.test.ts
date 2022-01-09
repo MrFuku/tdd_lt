@@ -18,6 +18,14 @@ test('null equals', () => {
   expect(dollarFive.equals(null)).toBeFalsy();
 });
 
+test('other object equals', () => {
+  const other = {hoge: 1} as unknown as Money;
+  expect(Money.dollar(5).equals(other)).toBeFalsy();
+
+  // NOTE: TypeScript は undefined === 5 はエラーにならずに通ってしまう
+  expect(undefined === 5).toBeFalsy();
+});
+
 test('equals Franc = Dollar', () => {
   expect(Money.franc(5).equals(Money.dollar(5))).toBeTruthy();
   expect(Money.franc(5).equals(Money.dollar(6))).toBeFalsy();
