@@ -1,5 +1,5 @@
 import { Bank } from "./bank";
-import { Expression } from "./expression";
+import { Expression, roundCalculate } from "./expression";
 import { Sum } from "./sum";
 
 export type Currency = 'CHF' | 'USD';
@@ -33,6 +33,10 @@ export class Money implements Expression {
   }
 
   plus(addend: Expression):Expression {
+    if (addend instanceof Money && this.currency === addend.currency) {
+      return new Money(roundCalculate(this.amount, addend.amount), this.currency);
+    }
+
     return new Sum(this, addend);
   }
 
